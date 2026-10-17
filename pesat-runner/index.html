@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PESAT RUNNER 3D</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="game-container"></div>
+
+    <div id="hud" class="hud">
+      <div class="hud-box">
+        <span class="label">SCORE</span>
+        <span id="score" class="value">0000</span>
+      </div>
+      <div class="hud-box">
+        <span class="label">COINS</span>
+        <span id="coins" class="value">00</span>
+      </div>
+      <div class="hud-box">
+        <span class="label">SPEED</span>
+        <span id="speed" class="value">1.0x</span>
+      </div>
+    </div>
+
+    <div id="menu-overlay" class="overlay active">
+      <div class="panel menu-panel">
+        <p class="eyebrow">Run • Dodge • Collect</p>
+        <h1>PESAT RUNNER 3D</h1>
+
+        <div id="how-panel" class="info-box hidden">
+          <p>Move left or right across 3 lanes.</p>
+          <p>Jump with Up, W, or Space to dodge cones and barriers.</p>
+          <p>Collect coins for 10 points each and avoid large crates.</p>
+        </div>
+
+        <button id="play-btn" class="primary-btn">PLAY GAME</button>
+        <button id="how-btn" class="secondary-btn">HOW TO PLAY</button>
+
+        <div class="controls-grid">
+          <div class="control-item"><span>← / A</span><small>Left</small></div>
+          <div class="control-item"><span>↑ / W / Space</span><small>Jump</small></div>
+          <div class="control-item"><span>→ / D</span><small>Right</small></div>
+        </div>
+
+        <div class="high-score-box">
+          <span>HIGH SCORE</span>
+          <strong id="menu-high-score">0000</strong>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-over-overlay" class="overlay hidden">
+      <div class="panel game-over-panel">
+        <h2>GAME OVER</h2>
+        <div class="stat-row"><span>Score</span><strong id="final-score">0000</strong></div>
+        <div class="stat-row"><span>Coins</span><strong id="final-coins">00</strong></div>
+        <div class="stat-row"><span>High Score</span><strong id="final-high-score">0000</strong></div>
+
+        <button id="play-again-btn" class="primary-btn">PLAY AGAIN</button>
+        <button id="main-menu-btn" class="secondary-btn">MAIN MENU</button>
+      </div>
+    </div>
+
+    <div id="floating-text" class="floating-text">+10</div>
+
+    <div id="touch-controls" class="touch-controls">
+      <button class="touch-btn" data-action="left">LEFT</button>
+      <button class="touch-btn" data-action="jump">JUMP</button>
+      <button class="touch-btn" data-action="right">RIGHT</button>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
